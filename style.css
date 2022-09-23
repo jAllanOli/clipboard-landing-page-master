@@ -1,0 +1,151 @@
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
+    min-height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 320px;
+    gap: 3rem;
+    padding: 0 2.1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 24px 19px -2px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 24px 19px -2px rgba(0, 0, 0, 0.26);
+    animation: fromCenter 1s;
+}
+
+main > svg {
+    margin-top: -40%;
+    width: 240px;
+    align-self: center;
+    filter: drop-shadow(0px 30px 0px hsla(238, 24%, 24%, 0.103));
+    animation: fromCenter 1s .3s backwards;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--very-dark-desaturated-blue);
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--very-dark-desaturated-blue);
+    transition: all 500ms ease;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button svg {
+    transition: all 750ms ease;
+}
+
+button:focus {
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    color: var(--dark-grayish-blue);
+    opacity: 0;
+    position: absolute;
+    transition: all 250ms ease-out;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+li {
+    list-style: none;
+    position: relative;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding-bottom: 1.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+}
+
+.activeP {
+    opacity: 100;
+    position: initial;
+}
+
+.downArrow {
+    transform: rotate(180deg);
+}
+
+@keyframes fromCenter {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@media(min-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+    main {
+        width: 900px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem;
+    }
+    
+    main > svg {
+        margin-left: -20%;
+        margin-top: 0;
+        width: 55%;
+    }
+
+    div {
+        width: 45%;
+    }
+
+    h1 {
+        text-align: left;
+    }
+}
