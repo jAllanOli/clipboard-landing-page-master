@@ -124,9 +124,7 @@ button:hover {
 }
 
 @media(min-width: 1000px) {
-    html {
-        font-size: 14px;
-    }
+
     main {
         width: 900px;
         flex-direction: row;
@@ -138,7 +136,7 @@ button:hover {
     main > svg {
         margin-left: -20%;
         margin-top: 0;
-        width: 55%;
+        width: 65%;
     }
 
     div {
